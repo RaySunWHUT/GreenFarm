@@ -20,7 +20,7 @@
 
         </div>
         <div class="footer_bottom">
-        <div class="footer_title">商业合作：+86 17354429242   <span>sunruikk@gmail.com</span></div>
+        <div class="footer_title">商业合作：+86 XXXXXX   <span>xx@xx.com</span></div>
             <div class="footer_inner">
                 <span class="boll inner_head"></span>
                 <div class="inner_button"><a>使用条款</a></div>
@@ -43,7 +43,7 @@
                 </div>
                 <div class="footer_word">
                     <div class="word_wo"></div>
-                    <span class="word">Copyright2020@WHUT武汉理工大学计算机学院</span>
+                    <span class="word">Copyright2020@WHUT</span>
                 </div>
             </div>
         </div>
