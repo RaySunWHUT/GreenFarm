@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace属性值通常设置为：包名 + SQL映射文件名来指定唯一的命名空间 -->
+<mapper namespace="greenfarm.sun.dao.ProductDao">
+
+    <select id="listPros" resultType="com.alibaba.fastjson.JSONObject">
+        select proId, proName, proIntro, proPrice, stock, state, proAddress, proImg from product;
+    </select>
+
+    <insert id="savePro">
+        insert into product (proName, proIntro, proPrice, proAddress, stock, proImg, state, typeId)
+        values (#{proName}, #{proIntro}, #{proPrice}, #{proAddress}, #{stock}, #{proImg}, #{state}, #{typeId});
+    </insert>
+
+
+    <delete id="deletePro">
+        delete from product where proId = #{proId};
+    </delete>
+
+    <update id="updatePro">
+      update product set proName = #{proName}, proIntro = #{proIntro}, proPrice = #{proPrice},
+      proAddress = #{proAddress}, proImg = #{proImg}, stock = #{stock}, typeId = #{typeId}, updateTime = now()
+      where proId = #{proId};
+    </update>
+
+    <select id="listTypeId" resultType="Integer">
+        select typeId from protype where typeName = #{typeName};
+    </select>
+
+    <update id="polling">
+        update product set state = 1 where DATE_SUB(NOW(), INTERVAL 5 MINUTE) > updateTime;
+    </update>
+
+    <select id="listProType" resultType="com.alibaba.fastjson.JSONObject">
+        select * from protype;
+    </select>
+
+</mapper>

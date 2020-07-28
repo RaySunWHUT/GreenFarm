@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace属性值通常设置为：包名 + SQL映射文件名来指定唯一的命名空间 -->
+<mapper namespace="greenfarm.sun.dao.FarmDao">
+
+    <select id="listFarms" resultType="com.alibaba.fastjson.JSONObject">
+        select farmId, farmName, farmIntro, farmSize, farmPrice, farmAddress, farmImg from farm;
+    </select>
+
+    <insert id="saveFarm">
+        insert into farm (farmName, farmIntro, farmSize, farmPrice, farmAddress, farmImg)
+        values (#{farmName}, #{farmIntro}, #{farmSize}, #{farmPrice}, #{farmAddress}, #{farmImg});
+    </insert>
+
+
+    <delete id="deleteFarm">
+        delete from farm where farmId = #{farmId};
+    </delete>
+
+    <update id="updateFarm">
+      update farm set farmName = #{farmName}, farmIntro = #{farmIntro}, farmPrice = #{farmPrice},
+      farmAddress = #{farmAddress}, farmImg = #{farmImg} where farmId = #{farmId};
+    </update>
+
+</mapper>

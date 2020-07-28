@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace属性值通常设置为：包名 + SQL映射文件名来指定唯一的命名空间 -->
+<mapper namespace="greenfarm.sun.dao.UserDao">
+
+    <select id="getUserByUserAccount" resultType="greenfarm.sun.domain.User" parameterType="String">
+        select userId, userAccount, userName, password, salt, email, phoneNumber from user u where u.userAccount = #{ userAccount };
+    </select>
+
+    <select id="getRoleByUserAccount" resultType="com.alibaba.fastjson.JSONObject" parameterType="String">
+
+      select u.roleId, r.roleName from user u inner join role r on u.roleId = r.roleId
+      where u.userAccount = #{userAccount};
+
+    </select>
+
+    <select id="listUsers" resultType="com.alibaba.fastjson.JSONObject">
+        select u.userAccount, u.userName, u.salt, u.email, r.roleName from user u inner join role r on u.roleId = r.roleId;
+    </select>
+
+
+    <insert id="saveUser">
+        insert into user (userName, userAccount, password, roleId, salt, gender, phoneNumber)
+        values (#{userName}, #{userAccount}, #{password}, #{roleId}, #{salt}, #{gender}, #{phoneNumber});
+    </insert>
+
+    <update id="updateUser">
+        update user set phoneNumber = #{phoneNumber}, email = #{email}, gender = #{gender}, head = #{head}
+        where userAccount = #{userAccount};
+    </update>
+
+
+    <select id="listOneUser" resultType="com.alibaba.fastjson.JSONObject">
+        select userId, userAccount, email, phoneNumber, gender, head from user where userAccount = #{userAccount};
+    </select>
+
+
+
+</mapper>
