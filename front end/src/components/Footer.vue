@@ -1,6 +1,7 @@
 <template>
     <div class="footer_container">
         <div class="footer_top">
+            <!-- Hello world! -->
             <div class="box">
                 <div class="box_title">绿色</div>
                 <div class="box_inner">我们承诺 绝不含有任何添加剂</div>
