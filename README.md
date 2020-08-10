@@ -152,6 +152,7 @@ greenfarm
 | 工具            | 说明             | 官网                                    |
 | --------------- | ---------------- | --------------------------------------- |
 | IntelliJ IDEA   | 后端开发IDE      | https://www.jetbrains.com/idea/download |
+| VS Code         | 前端开发IDE      | https://code.visualstudio.com/          |
 | Navicat Premium | 数据库连接工具   | http://www.formysql.com/xiazai.html     |
 | PowerDesigner   | 数据库设计工具   | http://powerdesigner.de/                |
 | InVision Studio | 原型设计工具     | https://www.invisionapp.com/            |
