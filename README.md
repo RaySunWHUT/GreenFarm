@@ -169,7 +169,7 @@ greenfarm
 | ----- | ------ | ------------------------------------------------------------ |
 | JDK   | 1.8    | https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html |
 | Mysql | 5.7.21 | https://www.mysql.com/                                       |
-| Vue   | 2.6.0  | https://www.elastic.co/downloads                             |
+| Vue   | 2.6.0  | https://cn.vuejs.org/                                        |
 
 
 
